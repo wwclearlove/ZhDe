@@ -4,42 +4,230 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title th:replace="${title}">公共</title>
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
   <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
   <link rel="stylesheet" href="../static/css/font-awesome.css" th:href="@{/css/font-awesome.css}">
+  <style type="text/css">
+    @media (min-width: 768px) {
+      .navbar {
+        border-radius: 0;
+      }
+      .nav > li > .subnav {
+        min-width: 120px;
+      }
+    }
+
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+      text-decoration: none;
+      background-color: white;
+    }
+
+    .navbar {
+      min-height: 0;
+      margin-bottom: 0;
+    }
+
+    .layout-right-content {
+      background: none;
+    }
+    .navbar {
+      box-shadow: 0 0 0 0;
+    }
+  </style>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      height: 80px;
+      padding-top: 5px;
+      border-bottom: 2px solid #D4D4D4;
+      background-color: white;
+    }
+
+    .language {
+      text-align: right;
+    }
+
+    .logo_icon {
+      width: 100%;
+      height: 100%;
+    }
+
+    .language strong {
+      color: black;
+    }
+
+    .language a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .language .chinese {
+      color: #9EC71D;
+    }
+
+    .language a:hover {
+      color: #9EC71D;
+    }
+  </style>
 </head>
 <body>
 
 <!--导航-->
-<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
-  <div class="ui container">
-    <div class="ui inverted secondary stackable menu">
-      <h2 class="ui teal header item">管理后台</h2>
-      <a href="#" th:href="@{/admin/blogs}" class=" m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>博客</a>
-      <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
-      <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
-      <a href="#" th:href="@{/admin/comment}" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini comment icon"></i>评论</a>
-      <a href="#" th:href="@{/admin/photos}" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini image outline icon"></i>相册</a>
-      <a href="#" th:href="@{/admin/yls}" class="m-item item m-mobile-hide" th:classappend="${n==6} ? 'active'"><i class="mini bookmark outline icon"></i>友链</a>
-      <div class="right m-item m-mobile-hide menu">
-        <div class="ui dropdown  item">
-          <div class="text">
-            <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005"  th:src="${session.user.getAvatar()}">
-         <sapn th:text="${session.user.getNickname()}">欢迎您!</sapn>
+<nav th:fragment="menu(n)">
+  <div class="header title">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 logo">
+          <img src="../static/imgs/logo-cn-chongqing.png" alt="logo" class="logo_icon">
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 language">
+          <strong>
+            <a href="#" class="chinese">中文版</a> |
+            <a href="#" class="deutsch">Deutsch</a>
+          </strong>
+
+          <div id="left-flyout-nav" class="layout-left-flyout" align="left">
+            <div class="cbFlyNav-wrap">
+              <nav class="the-nav nav-collapse clearfix">
+                <ul class="nav pull-left nav-flyout">
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">首页</a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">科技中心<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">研究所</a></li>
+                      <li><a href="#">设计处</a></li>
+                      <li><a href="#">试制车间</a></li>
+                      <li><a href="#">实验室</a></li>
+                      <li><a href="#">科研成果</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">合作咨询<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">中德企业合作</a></li>
+                      <li><a href="#">中德学校合作</a></li>
+                      <li><a href="#">中德学院</a></li>
+                      <li><a href="#">双元制大学</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">留学游学<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">留学</a></li>
+                      <li><a href="#">学生游学</a></li>
+                      <li><a href="#">企业游学</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">语言中心<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">青少年德语课程</a></li>
+                      <li><a href="#">标准等级课程</a></li>
+                      <li><a href="#">科技德语课程</a></li>
+                      <li><a href="#">德语小知识</a></li>
+                      <li><a href="#">德语翻译</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">关于我们<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">组织架构</a></li>
+                      <li><a href="#">团队力量</a></li>
+                      <li><a href="#">发展历程</a></li>
+                      <li><a href="#">发展目标</a></li>
+                      <li><a href="#">联系我们</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">新闻活动</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <a href="#" th:href="@{/admin/logout}" class="item">注销</a>
-            <a href="#" th:href="@{/admin/changepwd}" class="item">修改密码</a>
-            <a href="#" th:href="@{/admin/changezi}" class="item">修改资料</a>
+
+          <div class="layout-right-content" align="left">
+            <header class="the-header">
+              <div class="navbar container">
+
+                <a class="btn-navbar btn-navbar-navtoggle btn-flyout-trigger" href="javascript:;">
+                  <span class="icon-bar btn-flyout-trigger"></span>
+                  <span class="icon-bar btn-flyout-trigger"></span>
+                  <span class="icon-bar btn-flyout-trigger"></span>
+                </a>
+
+                <nav class="the-nav nav-collapse clearfix navbar-right">
+                  <ul class="nav nav-pill pull-left">
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">首页</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">科技中心<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">研究所</a></li>
+                        <li><a href="#">设计处</a></li>
+                        <li><a href="#">试制车间</a></li>
+                        <li><a href="#">实验室</a></li>
+                        <li><a href="#">科研成果</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">合作咨询<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">中德企业合作</a></li>
+                        <li><a href="#">中德学校合作</a></li>
+                        <li><a href="#">中德学院</a></li>
+                        <li><a href="#">双元制大学</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">留学游学<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">留学</a></li>
+                        <li><a href="#">学生游学</a></li>
+                        <li><a href="#">企业游学</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">语言中心<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">青少年德语课程</a></li>
+                        <li><a href="#">标准等级课程</a></li>
+                        <li><a href="#">科技德语课程</a></li>
+                        <li><a href="#">德语小知识</a></li>
+                        <li><a href="#">德语翻译</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">关于我们<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">组织架构</a></li>
+                        <li><a href="#">团队力量</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">发展目标</a></li>
+                        <li><a href="#">联系我们</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">新闻活动</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </header>
           </div>
 
         </div>
       </div>
     </div>
   </div>
-  <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
-    <i class="sidebar icon"></i>
-  </a>
 </nav>
 
 <!--导航-->
@@ -91,7 +279,12 @@
 
 </footer>
 <th:block th:fragment="script">
-
+  <script>
+    $(document).ready(function () {
+      $('.the-nav').cbFlyout();
+    });
+  </script>
+  <script type="text/javascript" src="../static/js/jquery.cbFlyout.js" th:src="@{/js/jquery.cbFlyout.js}"></script>
   <script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
   <script src="../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
 </th:block>
