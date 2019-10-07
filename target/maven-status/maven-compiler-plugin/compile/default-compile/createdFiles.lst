@@ -1,0 +1,11 @@
+com\wyc\dbconfig\DruidDBConfig.class
+com\wyc\web\controller\UserController.class
+com\wyc\service\UserServiceImpl.class
+com\wyc\model\User.class
+com\wyc\aspect\WebLogAspect.class
+com\wyc\web\controller\StudentController.class
+com\wyc\model\Student.class
+com\wyc\mapper\UserMapper.class
+com\wyc\shiro\ShiroConfig.class
+com\wyc\shiro\UserRealm.class
+com\wyc\App.class
