@@ -1,0 +1,14 @@
+server:
+  port: 8080
+<<<<<<< HEAD
+#  context-path: /test
+=======
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev
+
+>>>>>>> cab89fc407e0c165094cc7eff5d13e0de40d057b
+
+

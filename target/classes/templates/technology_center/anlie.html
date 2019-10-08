@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<<<<<<< HEAD
+<head th:replace="../_fragments :: head(~{::title})">
+=======
+<head th:replace="_fragments :: head(~{::title})">
+>>>>>>> cab89fc407e0c165094cc7eff5d13e0de40d057b
+    <meta charset="UTF-8">
+    <title>案例网页</title>
+</head>
+
+<<<<<<< HEAD
+<style>
+    .main{
+        height: 100px; border: 1px solid red;
+    }
+    .main div{
+        border: 1px solid blue;
+    }
+</style>
+<body>
+<nav th:replace="_fragments :: menu(1)"  >
+</nav>
+<section class="main container-fluid">
+
+    <div class="row">
+
+        <div class="col-lg-4 col-lg-offset-1 col-md-4 col-xs-12">
+            响应式布局1111
+        </div>
+        <div class="col-lg-4 col-md-4 col-xs-12">
+            响应式布局1111
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-12">
+            响应式布局1111
+            <div class="row">
+                <div class="col-lg-6">
+                    响应式布局1111
+                </div>
+                <div class="col-lg-6">
+                    响应式布局1111
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <!-- visible 可见  hidden：隐藏-->
+        <div class="col-log-4 col-md-4 col-xs-12 padC visible-lg">
+            <h1>这是第一张图片</h1>
+            <img src="../../static/imgs/1.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-log-4 col-md-4 col-xs-12 padC hidden-xs">
+            <h1>这是第2张图片</h1>
+            <img src="../../static/imgs/1.jpg" class="img-responsive"/>
+        </div>
+        <div class="col-log-4 col-md-4 col-xs-12 padC">
+            <h1>这是第3张图片</h1>
+            <img src="../../static/imgs/1.jpg" class="img-responsive"/>
+        </div>
+    </div>
+</section>
+
+<th:block th:replace="../_fragments :: script">
+=======
+<body>
+<nav th:replace="_fragments :: menu(1)">
+</nav>
+
+
+<th:block th:replace="_fragments :: script">
+>>>>>>> cab89fc407e0c165094cc7eff5d13e0de40d057b
+</th:block>
+</body>
+</html>

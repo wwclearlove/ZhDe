@@ -8,9 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Hello world!
  *
  */
-
-
-@MapperScan(basePackages = "com.zd.mapper")
 @SpringBootApplication
 public class App {
     public static void main( String[] args )
