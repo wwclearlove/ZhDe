@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<<<<<<< HEAD
 <head th:replace="../_fragments :: head(~{::title})">
+=======
+<head th:replace="_fragments :: head(~{::title})">
+>>>>>>> cab89fc407e0c165094cc7eff5d13e0de40d057b
     <meta charset="UTF-8">
     <title>案例网页</title>
 </head>
 
+<<<<<<< HEAD
 <style>
     .main{
         height: 100px; border: 1px solid red;
@@ -59,6 +64,14 @@
 </section>
 
 <th:block th:replace="../_fragments :: script">
+=======
+<body>
+<nav th:replace="_fragments :: menu(1)">
+</nav>
+
+
+<th:block th:replace="_fragments :: script">
+>>>>>>> cab89fc407e0c165094cc7eff5d13e0de40d057b
 </th:block>
 </body>
 </html>

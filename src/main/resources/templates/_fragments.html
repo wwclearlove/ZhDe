@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:fragment="head(title)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title th:replace="${title}">公共</title>
@@ -83,7 +84,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 logo">
-          <img src="../static/imgs/logo-cn-chongqing.png" alt="logo" class="logo_icon">
+          <img src="../static/imgs/logo-cn-chongqing.png" th:href="@{/imgs/logo-cn-chongqing.png}" alt="logo" class="logo_icon">
         </div>
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 language">
           <strong>
@@ -91,7 +92,7 @@
             <a href="#" class="deutsch">Deutsch</a>
           </strong>
 
-          <div id="left-flyout-nav" class="layout-left-flyout" align="left">
+          <div id="left-flyout-nav" class="layout-left-flyout menu" align="left">
             <div class="cbFlyNav-wrap">
               <nav class="the-nav nav-collapse clearfix">
                 <ul class="nav pull-left nav-flyout">
