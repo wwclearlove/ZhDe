@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:replace="${title}">公共</title>
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+  <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+  <link rel="stylesheet" href="../static/css/font-awesome.css" th:href="@{/css/font-awesome.css}">
+  <style type="text/css">
+    @media (min-width: 768px) {
+      .navbar {
+        border-radius: 0;
+      }
+      .nav > li > .subnav {
+        min-width: 120px;
+      }
+    }
+
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+      text-decoration: none;
+      background-color: white;
+    }
+
+    .navbar {
+      min-height: 0;
+      margin-bottom: 0;
+    }
+
+    .layout-right-content {
+      background: none;
+    }
+    .navbar {
+      box-shadow: 0 0 0 0;
+    }
+  </style>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      height: 80px;
+      padding-top: 5px;
+      border-bottom: 2px solid #D4D4D4;
+      background-color: white;
+    }
+
+    .language {
+      text-align: right;
+    }
+
+    .logo_icon {
+      width: 100%;
+      height: 100%;
+    }
+
+    .language strong {
+      color: black;
+    }
+
+    .language a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .language .chinese {
+      color: #9EC71D;
+    }
+
+    .language a:hover {
+      color: #9EC71D;
+    }
+  </style>
+</head>
+<body>
+
+<!--导航-->
+<nav th:fragment="menu(n)">
+  <div class="header title">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 logo">
+          <img src="../static/imgs/logo-cn-chongqing.png" alt="logo" class="logo_icon">
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 language">
+          <strong>
+            <a href="#" class="chinese">中文版</a> |
+            <a href="#" class="deutsch">Deutsch</a>
+          </strong>
+
+          <div id="left-flyout-nav" class="layout-left-flyout" align="left">
+            <div class="cbFlyNav-wrap">
+              <nav class="the-nav nav-collapse clearfix">
+                <ul class="nav pull-left nav-flyout">
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">首页</a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">科技中心<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">研究所</a></li>
+                      <li><a href="#">设计处</a></li>
+                      <li><a href="#">试制车间</a></li>
+                      <li><a href="#">实验室</a></li>
+                      <li><a href="#">科研成果</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">合作咨询<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">中德企业合作</a></li>
+                      <li><a href="#">中德学校合作</a></li>
+                      <li><a href="#">中德学院</a></li>
+                      <li><a href="#">双元制大学</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">留学游学<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">留学</a></li>
+                      <li><a href="#">学生游学</a></li>
+                      <li><a href="#">企业游学</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">语言中心<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">青少年德语课程</a></li>
+                      <li><a href="#">标准等级课程</a></li>
+                      <li><a href="#">科技德语课程</a></li>
+                      <li><a href="#">德语小知识</a></li>
+                      <li><a href="#">德语翻译</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">关于我们<i class="icon-cbmore"></i></a>
+                    <ul class="subnav">
+                      <li><a href="#">组织架构</a></li>
+                      <li><a href="#">团队力量</a></li>
+                      <li><a href="#">发展历程</a></li>
+                      <li><a href="#">发展目标</a></li>
+                      <li><a href="#">联系我们</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0);">新闻活动</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="layout-right-content" align="left">
+            <header class="the-header">
+              <div class="navbar container">
+
+                <a class="btn-navbar btn-navbar-navtoggle btn-flyout-trigger" href="javascript:;">
+                  <span class="icon-bar btn-flyout-trigger"></span>
+                  <span class="icon-bar btn-flyout-trigger"></span>
+                  <span class="icon-bar btn-flyout-trigger"></span>
+                </a>
+
+                <nav class="the-nav nav-collapse clearfix navbar-right">
+                  <ul class="nav nav-pill pull-left">
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">首页</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">科技中心<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">研究所</a></li>
+                        <li><a href="#">设计处</a></li>
+                        <li><a href="#">试制车间</a></li>
+                        <li><a href="#">实验室</a></li>
+                        <li><a href="#">科研成果</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">合作咨询<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">中德企业合作</a></li>
+                        <li><a href="#">中德学校合作</a></li>
+                        <li><a href="#">中德学院</a></li>
+                        <li><a href="#">双元制大学</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">留学游学<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">留学</a></li>
+                        <li><a href="#">学生游学</a></li>
+                        <li><a href="#">企业游学</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">语言中心<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">青少年德语课程</a></li>
+                        <li><a href="#">标准等级课程</a></li>
+                        <li><a href="#">科技德语课程</a></li>
+                        <li><a href="#">德语小知识</a></li>
+                        <li><a href="#">德语翻译</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">关于我们<b class="caret"></b></a>
+                      <ul class="subnav">
+                        <li><a href="#">组织架构</a></li>
+                        <li><a href="#">团队力量</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">发展目标</a></li>
+                        <li><a href="#">联系我们</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="javascript:void(0);">新闻活动</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </header>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--导航-->
+
+
+<!--底部footer-->
+<footer  th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
+  <div class="ui center aligned container">
+    <div class="ui inverted divided stackable grid">
+      <div class="three wide column m-mobile-hide">
+        <div class="ui inverted link list">
+          <div class="item">
+            <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}"  class="ui rounded image" alt="" style="width: 110px">
+          </div>
+        </div>
+
+      </div>
+      <div class="three wide column" >
+        <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+        <div id="newblog-container">
+          <div class="ui inverted link list" th:fragment="newblogList">
+            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item m-text-thin" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事（User Story）</a>
+          </div>
+        </div>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item m-text-thin">Email：1280488753@qq.com</a>
+          <a href="#" class="item m-text-thin">QQ：1280488753</a>
+        </div>
+      </div>
+      <div class="four wide column">
+        <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
+        <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header m-text-thin m-text-spaced ">友情链接</h4>
+        <div id="newbyl-container">
+          <div class="ui inverted link list" th:fragment="ylList">
+            <a href="#" th:href="@{${yl.url}}" target="_blank" class="item m-text-thin" th:each="yl : ${yls}" th:text="${yl.title}">用户故事（User Story）</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui inverted section divider"></div>
+    <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2019 Wangyongchuan Designed by Wangyongchuan</p>
+  </div>
+
+</footer>
+<th:block th:fragment="script">
+  <script>
+    $(document).ready(function () {
+      $('.the-nav').cbFlyout();
+    });
+  </script>
+  <script type="text/javascript" src="../static/js/jquery.cbFlyout.js" th:src="@{/js/jquery.cbFlyout.js}"></script>
+  <script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+  <script src="../static/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+</th:block>
+
+</body>
+</html>
